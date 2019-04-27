@@ -1,0 +1,35 @@
+@import '../../assets/styles/variables';
+
+.mistakes {
+	text-transform: uppercase;
+	grid-column: 2;
+	margin-top: 40px;
+
+	@media only screen and (min-width: map-get($breakpoints, 's')) {
+		margin-top: 0;
+	}
+
+	&__header {
+		font-size: 16px;
+		color: map-get($fontColors, 'gray');
+		text-align: center;
+
+		@media only screen and (min-width: map-get($breakpoints, 's')) {
+			text-align: left;
+		}
+	}
+
+	&__list {
+		list-style: none;
+		display: flex;
+		justify-content: center;
+		margin: 0;
+		padding: 0;
+
+		&-item {
+			font-size: 46px;
+			color: map-get($fontColors, 'special');
+			margin-right: 10px;
+		}
+	}
+}

@@ -1,14 +1,22 @@
+@import '../../assets/styles/variables';
+
 .folk {
+	box-sizing: border-box;
 	grid-column: 1;
 	width: 142px;
 	height: 330px;
 	position: relative;
+	margin: 0 auto;
 	z-index: 1;
+
+	@media only screen and (min-width: map-get($breakpoints, 's')) {
+		margin: 0;
+	}
 
 	&__bar {
 		width: 150px;
 		height: 20px;
-		background: #53555d;
+		background: map-get($bgColors, 'box');
 		margin-left: -40px;
 		border-radius: 5px;
 		position: relative;
@@ -21,7 +29,7 @@
 			transform: translateX(-50%);
 			width: 20px;
 			height: 60px;
-			background: #53555d;
+			background: map-get($bgColors, 'box');
 			border-radius: 5px;
 			z-index: -1;
 		}
@@ -41,7 +49,7 @@
 		width: 23px;
 		height: 34px;
 		margin: -10px auto 0 auto;
-		background: #fece8a;
+		background: map-get($folkColors, 'skin');
 		border-radius: 5px;
 		display: block;
 		position: relative;
@@ -51,7 +59,13 @@
 	&__corpus {
 		width: 52px;
 		height: 82px;
-		background: linear-gradient(90deg, #8ac657 0%, #8ac657 50%, #4ea06a 50%, #4ea06a 100%);
+		background: linear-gradient(
+			90deg,
+			map-get($folkColors, 'lightGreen') 0%,
+			map-get($folkColors, 'lightGreen') 50%,
+			map-get($folkColors, 'darkGreen') 50%,
+			map-get($folkColors, 'darkGreen') 100%
+		);
 		margin: -10px auto 0 auto;
 		border-radius: 5px;
 		position: relative;
@@ -64,7 +78,7 @@
 			left: 0;
 			width: 100%;
 			height: 26px;
-			background: #3c5a92;
+			background: map-get($folkColors, 'blue');
 		}
 	}
 
@@ -74,19 +88,19 @@
 		border-radius: 5px;
 
 		&--left {
-			background: #8ac657;
+			background: map-get($folkColors, 'lightGreen');
 			margin-top: -26px;
 			transform: translate(-4px, -62px) rotate(-45deg);
 		}
 
 		&--right {
-			background: #4ea06a;
+			background: map-get($folkColors, 'darkGreen');
 			transform: translate(76px, -62px) rotate(45deg);
 		}
 	}
 
 	&__hand {
-		background: #fece8a;
+		background: map-get($folkColors, 'skin');
 		width: 20px;
 		height: 20px;
 		border-radius: 50%;
@@ -105,7 +119,7 @@
 	}
 
 	&__leg {
-		background: #3c5a92;
+		background: map-get($folkColors, 'blue');
 		width: 26px;
 		height: 88px;
 		border-radius: 5px;
@@ -122,7 +136,7 @@
 	}
 
 	&__foot {
-		background: #fece8a;
+		background: map-get($folkColors, 'skin');
 		width: 42px;
 		height: 16px;
 		border-radius: 5px;
