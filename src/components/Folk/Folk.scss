@@ -1,0 +1,144 @@
+.folk {
+	grid-column: 1;
+	width: 142px;
+	height: 330px;
+	position: relative;
+	z-index: 1;
+
+	&__bar {
+		width: 150px;
+		height: 20px;
+		background: #53555d;
+		margin-left: -40px;
+		border-radius: 5px;
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 75%;
+			transform: translateX(-50%);
+			width: 20px;
+			height: 60px;
+			background: #53555d;
+			border-radius: 5px;
+			z-index: -1;
+		}
+	}
+
+	&__head {
+		background: url('../../assets/images/head.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 96px;
+		height: 106px;
+		margin: 20px auto 0 auto;
+		display: block;
+	}
+
+	&__neck {
+		width: 23px;
+		height: 34px;
+		margin: -10px auto 0 auto;
+		background: #fece8a;
+		border-radius: 5px;
+		display: block;
+		position: relative;
+		z-index: -1;
+	}
+
+	&__corpus {
+		width: 52px;
+		height: 82px;
+		background: linear-gradient(90deg, #8ac657 0%, #8ac657 50%, #4ea06a 50%, #4ea06a 100%);
+		margin: -10px auto 0 auto;
+		border-radius: 5px;
+		position: relative;
+		overflow: hidden;
+
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 26px;
+			background: #3c5a92;
+		}
+	}
+
+	&__arm {
+		width: 70px;
+		height: 26px;
+		border-radius: 5px;
+
+		&--left {
+			background: #8ac657;
+			margin-top: -26px;
+			transform: translate(-4px, -62px) rotate(-45deg);
+		}
+
+		&--right {
+			background: #4ea06a;
+			transform: translate(76px, -62px) rotate(45deg);
+		}
+	}
+
+	&__hand {
+		background: #fece8a;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		z-index: -1;
+		position: absolute;
+
+		&--left {
+			top: 210px;
+			left: -5px;
+		}
+
+		&--right {
+			top: 210px;
+			right: -5px;
+		}
+	}
+
+	&__leg {
+		background: #3c5a92;
+		width: 26px;
+		height: 88px;
+		border-radius: 5px;
+		margin: 0 auto;
+
+		&--left {
+			margin-top: -88px;
+			transform: translate(-24px, -34px) rotate(15deg);
+		}
+
+		&--right {
+			transform: translate(24px, -34px) rotate(-15deg);
+		}
+	}
+
+	&__foot {
+		background: #fece8a;
+		width: 42px;
+		height: 16px;
+		border-radius: 5px;
+		z-index: -1;
+		position: absolute;
+
+		&--left {
+			bottom: 0;
+			left: 3px;
+			transform: rotate(8deg);
+		}
+
+		&--right {
+			bottom: 0;
+			right: 3px;
+			transform: rotate(-8deg);
+		}
+	}
+}

@@ -1,0 +1,43 @@
+body {
+	background: map-get($bgColors, 'body');
+	position: relative;
+	width: 100vw;
+	min-height: 100vh;
+	font-family: 'Aller Display';
+}
+
+.container {
+	width: 100%;
+	min-height: 100vh;
+	padding: 30px;
+	box-sizing: border-box;
+	border-radius: 10px;
+	overflow: hidden;
+	background-color: map-get($bgColors, 'containerBlue');
+	box-shadow: 0px 3px 95px 0px rgba(0, 0, 0, 0.26);
+
+	background: linear-gradient(
+		135deg,
+		map-get($bgColors, 'container') 0%,
+		map-get($bgColors, 'container') 80%,
+		map-get($bgColors, 'containerBlue') 80%,
+		map-get($bgColors, 'containerBlue') 100%
+	);
+
+	@each $key, $value in $breakpoints {
+		@media only screen and (min-width: map-get($breakpoints, $key)) {
+			width: map-get($container, $key);
+		}
+	}
+
+	@media only screen and (min-width: map-get($breakpoints, 's')) {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		min-height: 600px;
+
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+}

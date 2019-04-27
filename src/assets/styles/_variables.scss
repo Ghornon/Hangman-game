@@ -1,0 +1,35 @@
+/* Font colors */
+
+$fontColors: (
+	primary: #fff,
+	gray: #53555d,
+	blue: #4d69fa
+);
+
+/* Background colors */
+
+$bgColors: (
+	body: #3b4163,
+	container: #f5f5f5,
+	containerBlue: #4d69fa
+);
+
+/* Breakpoints */
+
+$breakpoints: (
+	xs: 576px,
+	s: 576px,
+	m: 768px,
+	l: 992px,
+	xl: 1200px
+);
+
+/* Container sizes */
+
+$container: (
+	xs: 100%,
+	s: 540px,
+	m: 720px,
+	l: 960px,
+	xl: 1140px
+);
