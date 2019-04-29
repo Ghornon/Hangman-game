@@ -1,0 +1,41 @@
+@import '../../assets/styles/variables';
+
+.gameover {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	background: rgba(map-get($bgColors, 'gameOver'), 0.74);
+
+	&__header {
+		font-size: 46px;
+		color: map-get($fontColors, 'primary');
+		text-transform: uppercase;
+	}
+
+	&__btn {
+		width: 180px;
+		height: 60px;
+		margin: 20px;
+		text-align: center;
+		font-size: 16px;
+		color: map-get($fontColors, 'gameOver');
+		text-transform: uppercase;
+		border: 4px dashed map-get($fontColors, 'gameOver');
+		border-image-slice: 2;
+		background: transparent;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border-radius: 30px;
+		cursor: pointer;
+	}
+}

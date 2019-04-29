@@ -1,0 +1,33 @@
+.keyboard {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+
+	width: 40px;
+	height: 40px;
+
+	&__textbox {
+		opacity: 0;
+		width: 0;
+		height: 0;
+		overflow: hidden;
+		position: absolute;
+	}
+
+	&__label {
+		width: 40px;
+		height: 40px;
+		border-radius: 5px 0 0 5px;
+		background: white;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		img {
+			width: 26px;
+			height: 26px;
+		}
+	}
+}

@@ -1,11 +1,12 @@
 import React from 'react';
+import { connectWithStore } from '../../store/Store';
 
 import './Letters.scss';
 
-const Letters = ({ letters }) => {
-	const lettersList = [...letters].map((element, index) => {
+const LettersUI = ({ hash }) => {
+	const lettersList = [...hash].map((element, index) => {
 		const letter = element || '';
-		const active = element !== null ? 'letters__list-item--active' : '';
+		const active = element ? 'letters__list-item--active' : '';
 		return (
 			<li className={`letters__list-item ${active}`} key={`letters-item-${index}`}>
 				{letter}
@@ -20,4 +21,5 @@ const Letters = ({ letters }) => {
 	);
 };
 
+const Letters = connectWithStore(LettersUI);
 export default Letters;

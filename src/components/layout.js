@@ -1,17 +1,23 @@
 import React from 'react';
+import { StoreProvider } from '../store/Store';
 
 import { Folk } from './Folk';
 import { Letters } from './Letters';
 import { Mistakes } from './Mistakes';
+import { Keyboard } from './Keyboard';
+import { GameOver } from './GameOver';
 
 const Layout = () => {
-	console.log('asd');
 	return (
-		<div className="container">
-			<Folk lives="0" />
-			<Mistakes letters={['v', 'b', 'p', 'g']} />
-			<Letters letters={['a', 'l', 'a', null, 'm', 'a', null, 'k', false, 't', 'a']} />
-		</div>
+		<StoreProvider>
+			<div className="container">
+				<Folk />
+				<Mistakes />
+				<Letters />
+				<Keyboard />
+			</div>
+			<GameOver />
+		</StoreProvider>
 	);
 };
 

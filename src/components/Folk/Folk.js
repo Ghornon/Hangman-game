@@ -1,8 +1,9 @@
 import React from 'react';
+import { connectWithStore } from '../../store/Store';
 
 import './Folk.scss';
 
-const Folk = ({ lives }) => {
+const FolkUI = ({ lives }) => {
 	const folkProgress = [
 		'folk__bar',
 		'folk__head',
@@ -17,13 +18,11 @@ const Folk = ({ lives }) => {
 		'folk__foot folk__foot--right',
 		'folk__foot folk__foot--left'
 	]
-		.reverse()
-		.map((element, index) => {
-			if (lives <= index) return <div className={element} key={`folk-${element}-${index}`} />;
-		})
-		.reverse();
+		.filter((element, index, arr) => lives < arr.length - index)
+		.map((element, index) => <div className={element} key={`folk-${element}-${index}`} />);
 
 	return <section className="folk">{folkProgress}</section>;
 };
 
+const Folk = connectWithStore(FolkUI);
 export default Folk;
