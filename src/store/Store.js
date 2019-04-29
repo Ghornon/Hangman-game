@@ -27,13 +27,13 @@ class StoreProvider extends Component {
 	}
 
 	async fetchWord() {
-		const token = await fetch('http://hangman-api.herokuapp.com/hangman', {
+		const token = await fetch('https://hangman-api.herokuapp.com/hangman', {
 			method: 'POST'
 		})
 			.then(res => res.json())
 			.then(res => res.token);
 
-		const word = await fetch(`http://hangman-api.herokuapp.com/hangman?token=${token}`)
+		const word = await fetch(`https://hangman-api.herokuapp.com/hangman?token=${token}`)
 			.then(res => res.json())
 			.then(res => res.solution.toUpperCase());
 
