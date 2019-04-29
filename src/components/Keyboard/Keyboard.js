@@ -8,9 +8,15 @@ class KeyboardUI extends Component {
 	constructor(props) {
 		super(props);
 		this.handleKeyPress = this.handleKeyPress.bind(this);
+		this.handleRetinaKeyPress = this.handleRetinaKeyPress.bind(this);
+
+		this.state = {
+			key: ''
+		};
 	}
 
-	handleKeyPress(letter) {
+	handleKeyPress(event) {
+		const letter = event.key;
 		const { checkLetter, gameover } = this.props;
 		const isLetter = /[A-Za-z]/;
 		if (isLetter.exec(letter) && !gameover) {
@@ -18,14 +24,18 @@ class KeyboardUI extends Component {
 		}
 	}
 
+	handleRetinaKeyPress(event) {
+		const letter = event.target.value[event.target.value.length - 1];
+		this.setState({ key: letter });
+		this.handleKeyPress({ key: letter });
+	}
+
 	componentDidMount() {
-		this.keypressEvent = window.addEventListener('keypress', event => {
-			this.handleKeyPress(event.key);
-		});
+		window.addEventListener('keypress', this.handleKeyPress);
 	}
 
 	componentWillUnmount() {
-		window.removeEventListener(this.keypressEvent);
+		window.removeEventListener('keypress', this.handleKeyPress);
 	}
 
 	render() {
@@ -36,6 +46,8 @@ class KeyboardUI extends Component {
 					id="keyboard__textbox"
 					name="keyboard__textbox"
 					className="keyboard__textbox"
+					onChange={this.handleRetinaKeyPress}
+					value={this.state.key}
 				/>
 
 				<label htmlFor="keyboard__textbox" className="keyboard__label">

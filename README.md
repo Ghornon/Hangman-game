@@ -17,7 +17,7 @@ In the project directory, you can run:
 Builds and runs the app.<br>
 Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
 
-### `npm start:dev`
+### `npm run develop`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

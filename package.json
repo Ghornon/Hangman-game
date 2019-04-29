@@ -18,7 +18,7 @@
 	},
 	"scripts": {
 		"start": "npm run build && npm run serve",
-		"start:dev": "react-scripts start",
+		"develop": "react-scripts start",
 		"serve": "serve -s build",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
