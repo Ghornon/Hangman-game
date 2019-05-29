@@ -5,7 +5,7 @@ import { Folk } from './Folk';
 import { Letters } from './Letters';
 import { Mistakes } from './Mistakes';
 import { Keyboard } from './Keyboard';
-import { GameOver } from './GameOver';
+import { LoadingScreen } from './LoadingScreen';
 
 const Layout = () => {
 	return (
@@ -16,7 +16,7 @@ const Layout = () => {
 				<Letters />
 				<Keyboard />
 			</div>
-			<GameOver />
+			<LoadingScreen />
 		</StoreProvider>
 	);
 };

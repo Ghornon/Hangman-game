@@ -6,13 +6,13 @@ const Context = React.createContext();
 class StoreProvider extends Component {
 	constructor(props) {
 		super(props);
-		this.startNewGame = this.startNewGame.bind(this);
 		this.state = {
 			lives: 11,
 			word: '',
 			hash: new Array(11).fill(false),
 			missed: [],
-			gameover: false
+			gameover: false,
+			loading: true
 		};
 	}
 
@@ -40,12 +40,13 @@ class StoreProvider extends Component {
 		return word;
 	}
 
-	async startNewGame() {
+	startNewGame = async () => {
+		this.setState({ ...this.state, loading: true });
 		const word = await this.fetchWord();
 		const hash = this.createHash(word);
 
-		this.setState({ lives: 11, word, hash, missed: [], gameover: false });
-	}
+		this.setState({ lives: 11, word, hash, missed: [], gameover: false, loading: false });
+	};
 
 	componentDidMount() {
 		this.startNewGame();
@@ -60,7 +61,7 @@ class StoreProvider extends Component {
 			(this.state.lives <= 0 && !this.state.gameover) ||
 			(hashString === this.state.word && !this.state.gameover)
 		) {
-			this.setState({ ...this.state, gameover: true });
+			this.setState({ gameover: true });
 		}
 	}
 

@@ -7,28 +7,26 @@ import { connectWithStore } from '../../store/Store';
 class KeyboardUI extends Component {
 	constructor(props) {
 		super(props);
-		this.handleKeyPress = this.handleKeyPress.bind(this);
-		this.handleRetinaKeyPress = this.handleRetinaKeyPress.bind(this);
 
 		this.state = {
 			key: ''
 		};
 	}
 
-	handleKeyPress(event) {
+	handleKeyPress = event => {
 		const letter = event.key;
 		const { checkLetter, gameover } = this.props;
 		const isLetter = /[A-Za-z]/;
 		if (isLetter.exec(letter) && !gameover) {
 			checkLetter(letter.toUpperCase());
 		}
-	}
+	};
 
-	handleRetinaKeyPress(event) {
+	handleRetinaKeyPress = event => {
 		const letter = event.target.value[event.target.value.length - 1];
 		this.setState({ key: letter });
 		this.handleKeyPress({ key: letter });
-	}
+	};
 
 	componentDidMount() {
 		window.addEventListener('keypress', this.handleKeyPress);

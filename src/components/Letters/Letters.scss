@@ -8,6 +8,7 @@
 	grid-column: 1/3;
 	display: flex;
 	align-items: flex-end;
+	position: relative;
 
 	&__list {
 		display: grid;
@@ -43,5 +44,12 @@
 				background: map-get($bgColors, 'box');
 			}
 		}
+	}
+
+	&__loader {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, 0%);
 	}
 }

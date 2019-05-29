@@ -1,3 +1,5 @@
+@import '../../assets/styles/variables';
+
 .keyboard {
 	position: absolute;
 	top: 50%;
@@ -29,5 +31,9 @@
 			width: 26px;
 			height: 26px;
 		}
+	}
+
+	@media only screen and (min-width: map-get($breakpoints, 'l')) {
+		display: none;
 	}
 }
